@@ -26,7 +26,7 @@ class Lifecycle extends Component {
         setInterval(() => {
             const titleIndex = (this.state.titleIndex + 1) % TITLES.length;
             this.setState({ titleIndex });
-        }, 3000)
+        }, 4000)
     }
 
     render() {

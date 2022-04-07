@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Lifecycle from './Lifecycle';
 import Projects from "./Projects";
 import Users from "./Users";
-
+import Promises from "./Promises";
 
 class App extends Component {
     state = {displayBio: false};
@@ -30,6 +30,7 @@ class App extends Component {
                 <Projects />
                 < hr/>
                 <Users />
+                {/* <Promises /> */}
             </div>
         )
     }

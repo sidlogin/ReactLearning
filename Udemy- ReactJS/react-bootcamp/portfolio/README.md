@@ -81,7 +81,7 @@
 
 # HTTP Request using fetch()
 
-1. Integrate REST API for HTTP Response using fetch() on page load with componentDidMount()
+1. Integrate REST API for HTTP Response using fetch() on page load with componentDidMount() hook
 2. Integrate REST API using fetchUsers() stateless function on button click
 3. Destructuring of React Props for stateless component User
 ```
@@ -116,3 +116,6 @@ const User = ({user: { first_name, last_name } }) => (
     <p style={{margin: 20}}>{first_name} {last_name}</p>
 )
 ```
+
+# Promise with Resolve and Reject
+1. Check Promise.js

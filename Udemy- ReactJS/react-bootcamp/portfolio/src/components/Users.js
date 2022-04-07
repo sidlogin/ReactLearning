@@ -11,6 +11,7 @@ class Users extends Component {
         fetch('https://reqres.in/api/users/2')
             .then(response => response.json())
             .then(json => this.setState({ user: json.data }))
+            .catch(error => alert(error.message))
     }
 
     fetchUsers = () => {
@@ -20,6 +21,7 @@ class Users extends Component {
                 console.log('Users: ', json.data);
                 return this.setState({ users: json.data })
             })
+            .catch(error => console.log(error.message))
         
     }
 

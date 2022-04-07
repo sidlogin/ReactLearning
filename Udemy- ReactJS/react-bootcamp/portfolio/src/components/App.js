@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Lifecycle from './Lifecycle';
 import Projects from "./Projects";
+import Header from "./common/Header";
 
 class App extends Component {
     state = {displayBio: false};
@@ -12,6 +13,7 @@ class App extends Component {
     render() {
         return (
             <div>
+                <Header />
                 <h1>Hello!</h1>
                 <p>My name is Siddharth, I am Web Architect.</p>
                 { this.state.displayBio ? <Lifecycle /> : null }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Header from "./common/Header";
 
 const User = ({user: { first_name, last_name } }) => (
     <p style={{margin: 20}}>{first_name} {last_name}</p>
@@ -28,6 +29,7 @@ class Users extends Component {
     render() {
         return(
             <div>
+                <Header />
                 <h2>Active Users</h2>
                 <User user={this.state.user} />
                 <hr />

@@ -135,3 +135,18 @@ import { createBrowserHistory } from 'history'
     </Routes>
 </Router>
 ```
+
+# React Link
+
+
+1. React Link help to create link in react application and using Link it doesn't refresh the state and maintain the session
+2. Regular <a href> works as well to navigate user as per given link but it refresh the state and create fresh session at every click.
+
+```
+import { Link } from "react-router-dom";
+
+<div className="header">
+    <h3> <Link to='/'>Home</Link></h3>
+    <h3> <Link to='/users'>Users</Link></h3>
+</div>
+```

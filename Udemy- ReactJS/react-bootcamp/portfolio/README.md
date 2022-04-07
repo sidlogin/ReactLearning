@@ -49,3 +49,16 @@
     componentDidMount() => Fires when component is inserted into DOM
     componentWillUnmount() => Fires when component is going to leave DOM
     
+2. Creating a component using class style and Stateless Functional Component
+3. Difference techniques to create functional component using Class style vs stateless style
+```
+class Projects extends Component {
+    render() {
+        return (<div></div>)
+    }
+}
+
+const Project = (props) => {
+    return (<div></div>)
+}
+```

@@ -3,8 +3,39 @@
     - npm run start
     - test http://localhost:3000
 2. Create new jsx react component and export in for other components
-3. Class basic concenpts for inheritance using extends
+    class Projects extends Component {
+        render() {
+            return (
+                <div></div>
+            )
+        }
+    }
+3. Class basic concenpts for inheritance using extends, check Oops.js for reference.
 4. Use of setState() to update/modify the state
 5. Import mock JSON object in to component to render the view
 6. Use of React Props to pass an object in to component to make reusable
 7. Use of className="" and style={} properties on JSX elements
+8. First Method: To attach class property to the method from constructor:
+    class App extends Component {
+    constructor() {
+        this.state = {displayBio: false};
+
+        // binding the this object to pass object as an argument
+        this.toggleDisplayBio.bind(this);
+    }
+
+        toggleDisplayBio() {
+            this.setState({displayBio: !this.state.displayBio});
+        }
+    }
+
+    Second Method: To attach class property to the method without constructor:
+    class App extends Component {
+        state = {displayBio: false};
+
+    // Attaching toggleDisplayBio method to 'this' object using arrow method
+        toggleDisplayBio = () => {
+            this.setState({displayBio: !this.state.displayBio});
+        }
+    }
+

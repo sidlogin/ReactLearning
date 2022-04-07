@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 
 class RegularClass {}
-class ComponentClass extends Component {}
+class ComponentClass extends Component {
+    render() {
+        <div></div>
+    }
+}
+
+export default ComponentClass;
 
 const regularClass = new RegularClass();
 const componentClass = new ComponentClass();

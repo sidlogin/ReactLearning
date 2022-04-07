@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Lifecycle from './Lifecycle';
 import Projects from "./Projects";
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
             <div>
                 <h1>Hello!</h1>
                 <p>My name is Siddharth, I am Web Architect.</p>
+                { this.state.displayBio ? <Lifecycle /> : null }
                 <p>I am learning React JS and looking forward to learn react project and examples</p>
                 {
                     this.state.displayBio ? (

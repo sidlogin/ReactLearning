@@ -42,3 +42,10 @@
         }
     }
 
+
+# Day-2 React Core Concepts
+
+1. React Life-cycle methods:
+    componentDidMount() => Fires when component is inserted into DOM
+    componentWillUnmount() => Fires when component is going to leave DOM
+    

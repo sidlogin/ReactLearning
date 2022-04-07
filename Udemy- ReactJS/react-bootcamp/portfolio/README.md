@@ -86,7 +86,7 @@
 3. Destructuring of React Props for stateless component User
 ```
 PROPS: {
-    "data": {
+    "user": {
         "id": 2,
         "email": "janet.weaver@reqres.in",
         "first_name": "Janet",
@@ -94,6 +94,24 @@ PROPS: {
         "avatar": "https://reqres.in/img/faces/2-image.jpg"
     }
 }
+
+- Method 1: Stateless component with props and destructuring props.user properties
+const User = props => {
+    const { first_name, last_name } = props.user;
+    return (
+        <p style={{margin: 20}}>{first_name} {last_name}</p>
+    )
+}
+
+- Method 2: Stateless component with destructured props
+const User = ({user}) => {
+    const { first_name, last_name } = user;
+    return (
+        <p style={{margin: 20}}>{first_name} {last_name}</p>
+    )
+}
+
+- Method 3: Stateless component with nested destructuring
 const User = ({user: { first_name, last_name } }) => (
     <p style={{margin: 20}}>{first_name} {last_name}</p>
 )

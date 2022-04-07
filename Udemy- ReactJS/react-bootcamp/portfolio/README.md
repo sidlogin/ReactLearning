@@ -119,3 +119,19 @@ const User = ({user: { first_name, last_name } }) => (
 
 # Promise with Resolve and Reject
 1. Check Promise.js
+
+# React Router
+1. npm i react-router-dom --save
+2. npm i history --save
+
+```
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { createBrowserHistory } from 'history'
+
+<Router history={createBrowserHistory()}>
+    <Routes>
+        <Route exact path='/' element={<App/>} />
+        <Route path='/users' element={<Users/>} />
+    </Routes>
+</Router>
+```

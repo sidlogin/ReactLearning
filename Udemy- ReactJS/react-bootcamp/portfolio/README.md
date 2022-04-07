@@ -16,13 +16,15 @@
 6. Use of React Props to pass an object in to component to make reusable
 7. Use of className="" and style={} properties on JSX elements
 8. First Method: To attach class property to the method from constructor:
-    class App extends Component {
-    constructor() {
-        this.state = {displayBio: false};
 
-        // binding the this object to pass object as an argument
-        this.toggleDisplayBio.bind(this);
-    }
+    // Code snippet
+    class App extends Component {
+        constructor() {
+            this.state = {displayBio: false};
+
+            // binding the this object to pass object as an argument
+            this.toggleDisplayBio.bind(this);
+        }
 
         toggleDisplayBio() {
             this.setState({displayBio: !this.state.displayBio});
@@ -30,6 +32,7 @@
     }
 
     Second Method: To attach class property to the method without constructor:
+    // Code snippet
     class App extends Component {
         state = {displayBio: false};
 

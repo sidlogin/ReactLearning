@@ -11,6 +11,7 @@
             )
         }
     }
+    export default Projects
     ```
 3. Class basic concenpts for inheritance using extends, check Oops.js for reference.
 4. Use of setState() to update/modify the state
@@ -56,13 +57,25 @@
 2. Creating a component using class style and Stateless Functional Component
 3. Difference techniques to create functional component using Class style vs stateless style
 ```
+
+// Functional Class Component for example App.js
 class Projects extends Component {
     render() {
         return (<div></div>)
     }
 }
+export default Projects
 
+// STATELESS COMPONENT with PROPS for example Project.js
 const Project = (props) => {
     return (<div></div>)
 }
+export default Project
+
+
+// STATELESS COMPONENT with INLINE Return for example Projects.js
+const Project = () => (
+    <div></div>
+)
+export default Project
 ```

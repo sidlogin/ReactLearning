@@ -1,4 +1,4 @@
-# DAY-1 learnings
+# Basic React learnings
 1. Creating new project using npx create-new-app <project-name>
     - npm run start
     - test http://localhost:3000
@@ -48,7 +48,7 @@
     ```
 
 
-# Day-2 React Core Concepts
+# React Core Concepts
 
 1. React Life-cycle methods:
     componentDidMount() => Fires when component is inserted into DOM
@@ -56,26 +56,45 @@
     
 2. Creating a component using class style and Stateless Functional Component
 3. Difference techniques to create functional component using Class style vs stateless style
-```
+    ```
+    // Functional Class Component for example App.js
+    class Projects extends Component {
+        render() {
+            return (<div></div>)
+        }
+    }
+    export default Projects
 
-// Functional Class Component for example App.js
-class Projects extends Component {
-    render() {
+    // STATELESS COMPONENT with PROPS for example Project.js
+    const Project = (props) => {
         return (<div></div>)
     }
+    export default Project
+
+
+    // STATELESS COMPONENT with INLINE Return for example Projects.js
+    const Projects = () => (
+        <div></div>
+    )
+    export default Projects
+    ```
+
+# HTTP Request using fetch()
+
+1. Integrate REST API for HTTP Response using fetch() on page load with componentDidMount()
+2. Integrate REST API using fetchUsers() stateless function on button click
+3. Destructuring of React Props for stateless component User
+```
+PROPS: {
+    "data": {
+        "id": 2,
+        "email": "janet.weaver@reqres.in",
+        "first_name": "Janet",
+        "last_name": "Weaver",
+        "avatar": "https://reqres.in/img/faces/2-image.jpg"
+    }
 }
-export default Projects
-
-// STATELESS COMPONENT with PROPS for example Project.js
-const Project = (props) => {
-    return (<div></div>)
-}
-export default Project
-
-
-// STATELESS COMPONENT with INLINE Return for example Projects.js
-const Project = () => (
-    <div></div>
+const User = ({user: { first_name, last_name } }) => (
+    <p style={{margin: 20}}>{first_name} {last_name}</p>
 )
-export default Project
 ```

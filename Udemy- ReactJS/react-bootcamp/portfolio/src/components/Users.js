@@ -28,8 +28,7 @@ class Users extends Component {
 
     render() {
         return(
-            <div>
-                <Header />
+            <section>
                 <h2>Active Users</h2>
                 <User user={this.state.user} />
                 <hr />
@@ -38,7 +37,7 @@ class Users extends Component {
                 {
                     this.state.users.map(user => <User key={user.id} user={user} />)
                 }
-            </div>
+            </section>
         )
     }
 }

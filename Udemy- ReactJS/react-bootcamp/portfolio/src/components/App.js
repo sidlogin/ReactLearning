@@ -12,8 +12,7 @@ class App extends Component {
     
     render() {
         return (
-            <div>
-                <Header />
+            <main className="body">
                 <h1>Hello!</h1>
                 <p>My name is Siddharth, I am Web Architect.</p>
                 { this.state.displayBio ? <Lifecycle /> : null }
@@ -28,8 +27,9 @@ class App extends Component {
                 }
                 < hr/>
                 <Projects />
-            </div>
+            </main>
         )
     }
 }
+
 export default App;

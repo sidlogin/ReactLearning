@@ -2,13 +2,14 @@
 
 ### Basic structure of functioanl component
 ```
-import React from React;
-import { Component, ReactDOM } from "react";
+import React, { Component, ReactDOM } from "react";
 
 class FunctionalComponent extends Component {
     render() {
         return (
-            <div></div>
+            <div>
+                <h3>Functional Component</h3>
+            </div>
         )
     }
 }

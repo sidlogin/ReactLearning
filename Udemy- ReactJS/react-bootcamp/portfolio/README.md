@@ -79,7 +79,7 @@
     export default Projects
     ```
 
-# HTTP Request using fetch()
+# HTTP API Calls using fetch method
 
 1. Integrate REST API for HTTP Response using fetch() on page load with componentDidMount() hook
 2. Integrate REST API using fetchUsers() stateless function on button click
@@ -120,7 +120,7 @@ const User = ({user: { first_name, last_name } }) => (
 # Promise with Resolve and Reject
 1. Check Promise.js
 
-# React Router
+# Applying routing to the application using React Router
 1. npm i react-router-dom --save
 2. npm i history --save
 
@@ -150,6 +150,8 @@ import { Link } from "react-router-dom";
 </div>
 ```
 
-# React Higher order component
-- Take a component as an input and output entirely new component as an output
-- Higher order component needs an input as an component and assume that input compnent is coming down to props object
+# React Higher-order component 
+- A higher-order component is one that takes another component as an input. The idea is to treat the component like a function.
+- Have one component as input and then output an entirely new compinent based on that input with new properties, methods and/or JSX!
+
+Refer the Header component which is converted into higher-order component.

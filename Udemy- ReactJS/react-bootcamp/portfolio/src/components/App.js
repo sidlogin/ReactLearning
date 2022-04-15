@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Lifecycle from './Lifecycle';
 import Projects from "./Projects";
-import Header from "./common/Header";
+import Users from "./Users";
 
 class App extends Component {
     state = {displayBio: false};
@@ -27,6 +27,8 @@ class App extends Component {
                 }
                 < hr/>
                 <Projects />
+                < hr/>
+                <Users />
             </main>
         )
     }

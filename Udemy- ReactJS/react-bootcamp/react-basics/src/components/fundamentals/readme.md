@@ -1,6 +1,6 @@
 ## Functional Component
 
-### Basic structure of functioanl component
+### Basic structure of functional component
 ```
 import React, { Component, ReactDOM } from "react";
 
@@ -14,4 +14,18 @@ class FunctionalComponent extends Component {
     }
 }
 export default FunctionalComponent;
+```
+
+### Basic structure of class component
+```
+import React, { Component } from "react";
+
+class ClassComponent extends Component {
+    render() {
+        return (
+            <div>Class Component</div>
+        )
+    }
+}
+export default ClassComponent;
 ```

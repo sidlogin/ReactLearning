@@ -1,12 +1,10 @@
-import React, { Component, ReactDOM } from "react";
+import React from "react";
 
-class FunctionalComponent extends Component {
-    render() {
-        return (
-            <div>
-                <h3>Functional Component</h3>
-            </div>
-        )
-    }
+const FunctionalComponent = () => {
+    return (
+        <div>
+            <h3>Functional Component</h3>
+        </div>
+    )
 }
 export default FunctionalComponent;

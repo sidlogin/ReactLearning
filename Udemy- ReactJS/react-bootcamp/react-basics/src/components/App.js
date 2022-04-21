@@ -1,6 +1,6 @@
 import './App.css'
-import ClassComponent from './fundamentals/ClassComponent';
-import FunctionalComponent from './fundamentals/FunctionalComponent'
+import ClassComponent from './basic-concepts/fundamentals/ClassComponent';
+import FunctionalComponent from './basic-concepts/fundamentals/FunctionalComponent'
 
 const App = () => {
   return (

@@ -1,9 +1,19 @@
 import React from 'react'
 
-const Content = () => {
+import ItemList from '../ItemList';
+
+const Content = ({items, handleDelete, handleCheck}) => {
   return (
     <main>
-        <p>Hello Sid</p>
+        {items.length ? (
+            <ItemList 
+                items={items}
+                handleCheck={handleCheck}
+                handleDelete={handleDelete}
+            />
+        ) : (
+            <p style={ {marginTop: '2rem'} }> Your items is empty</p>
+        )}
     </main>
   )
 }

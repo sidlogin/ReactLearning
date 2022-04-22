@@ -10,6 +10,7 @@ const AddItem = ({newItem, setNewItem, handleSubmit}) => {
         <label htmlFor="addItem">Add Item</label>
         <input 
             autoFocus
+            autoComplete='off'
             ref={inputRef}
             id='addItem'
             type='text'

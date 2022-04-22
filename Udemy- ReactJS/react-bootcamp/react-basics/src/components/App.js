@@ -7,6 +7,8 @@ import Footer from './ecosystems/Footer';
 import Header from './ecosystems/Header';
 import SearchItem from './SearchItem';
 
+import apiRequest from './apiRequest';
+
 const App = () => {
   const API_URL = 'http://localhost:3100/items';
   const [items, setItem] = useState([]);
@@ -41,12 +43,23 @@ const App = () => {
     }, 2000);
   }, []);
 
-  const addItem = (item) => {
+  const addItem = async (item) => {
     const id = items.length ? items[items.length - 1].id + 1 : 1;
     const myNewItem = {
       id, checked: false, item
     };
     setItem([...items, myNewItem]);
+
+    const params = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(myNewItem)
+    }
+
+    const response  = await apiRequest(API_URL, params);
+    if (response.ok) setFetchError(response);
   }
 
   const handleSubmit = (e) => {
@@ -56,14 +69,31 @@ const App = () => {
     setNewItem('');
   }
 
-  const handleCheck = (id) => {
+  const handleCheck = async (id) => {
       const updateListItems = items.map((item) => item.id === id ? {...item, checked: !item.checked } : item);
       setItem(updateListItems);
+
+      const selectedItem = updateListItems.filter((item) => item.id === id)
+      const params = {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({checked: selectedItem[0].checked})
+      }
+      const reqUrl = `${API_URL}/${id}`
+      const response  = await apiRequest(reqUrl, params);
+      if (response.ok) setFetchError(response);
   }
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
       const updateListItems = items.filter((item) => item.id !== id);
       setItem(updateListItems);
+
+      const params = { method: 'DELETE' }
+      const reqUrl = `${API_URL}/${id}`
+      const response  = await apiRequest(reqUrl, params);
+      if (response.ok) setFetchError(response);
   }
 
   return (

@@ -1,12 +1,10 @@
 import React from 'react';
 import { useParams, Link } from "react-router-dom";
+import NotFound from './NotFound';
 
 const PostPage = ({posts, handleDelete}) => {
   const { id } = useParams();
   const post = posts.filter((post) => post.id && post.id.toString() === id)[0];
-
-  console.log(posts, post, id);
-
 
   return (
     <>
@@ -22,13 +20,7 @@ const PostPage = ({posts, handleDelete}) => {
           </>
         }
         { !post &&
-          <>
-            <h2>Post not found</h2>
-            <p>Well, that's disappointing</p>
-            <p>
-              <Link to="/">Back to Homepage</Link>
-            </p>
-          </>
+          <NotFound />
         }
       </article>
     </>

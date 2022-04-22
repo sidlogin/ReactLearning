@@ -1,10 +1,8 @@
-import React from 'react';
+import NotFound from './NotFound';
 
 const Missing = () => {
   return (
-    <main>
-        <h1>404 - Missing</h1>
-    </main>
+    <NotFound />
   )
 }
 

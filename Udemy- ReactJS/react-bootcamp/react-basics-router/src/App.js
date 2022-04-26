@@ -10,6 +10,7 @@ import EditPost from "./components/EditPost";
 import About from './components/About';
 import Missing from './components/Missing';
 import Home from './components/Home';
+import Register from "./components/Register";
 
 import {DataProvider} from "./context/DataContext";
 
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="/edit/:id" element={ <EditPost /> } />
             <Route path="/post/:id" element={ <PostPage /> } />
             <Route path="about" element={<About />} />
+            <Route path="register" element={<Register />} />
             <Route path="*" element={<Missing />} />
           </Routes>
           <Outlet />

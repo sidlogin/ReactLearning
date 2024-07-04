@@ -27,7 +27,9 @@ const App = () => {
     const fetchItems = async () => {
       try {
         const apiResponse = await fetch(API_URL);
-        if (!apiResponse.ok) throw Error('Did not receive expected data');
+        if (!apiResponse.ok) {
+          throw Error('Did not receive expected data');
+        }
         const listItems = await apiResponse.json();
         setItem(listItems);
         setFetchError(null);
@@ -59,7 +61,9 @@ const App = () => {
     }
 
     const response  = await apiRequest(API_URL, params);
-    if (response.ok) setFetchError(response);
+    if (response && response.ok) {
+      setFetchError(response);
+    }
   }
 
   const handleSubmit = (e) => {
@@ -70,6 +74,7 @@ const App = () => {
   }
 
   const handleCheck = async (id) => {
+      console.log('handleCheck function triggered');
       const updateListItems = items.map((item) => item.id === id ? {...item, checked: !item.checked } : item);
       setItem(updateListItems);
 
@@ -83,22 +88,25 @@ const App = () => {
       }
       const reqUrl = `${API_URL}/${id}`
       const response  = await apiRequest(reqUrl, params);
-      if (response.ok) setFetchError(response);
+      console.log('handleCheck: ', response);
+      if (response && response.ok) setFetchError(response);
   }
 
   const handleDelete = async (id) => {
+      console.log('handleDelete function triggered');
       const updateListItems = items.filter((item) => item.id !== id);
       setItem(updateListItems);
 
       const params = { method: 'DELETE' }
       const reqUrl = `${API_URL}/${id}`
       const response  = await apiRequest(reqUrl, params);
-      if (response.ok) setFetchError(response);
+      console.log('handleDelete: ', response);
+      if (response && response.ok) setFetchError(response);
   }
 
   return (
     <div className='App'>
-      <Header title="Groceries List"/>
+      <Header title="Products List"/>
       <AddItem
         newItem={newItem}
         setNewItem={setNewItem}
@@ -112,7 +120,8 @@ const App = () => {
         {isLoading && <p>Loading items...</p>}
         {fetchError && <p style={{color: "red"}}> {`Error: ${fetchError}`} </p>}
         {
-          !fetchError && !isLoading && <Content 
+          !fetchError && !isLoading &&
+          <Content 
             items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase() ) )}
             handleCheck={handleCheck}
             handleDelete={handleDelete}
